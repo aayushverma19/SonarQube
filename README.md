@@ -18,9 +18,6 @@
 8. [SonarQube](#sonarqube)  
    - [Key Features of SonarQube](#key-features-of-sonarqube)  
    - [Important Configuration Files in SonarQube](#important-configuration-files-in-sonarqube)  
-     1. [sonar-project.properties](#sonar-projectproperties)  
-     2. [sonar-scanner.properties](#sonar-scannerproperties)  
-     3. [sonar.properties](#sonar-properties)  
 9. [Creating a Role](#creating-a-role)
 10. [Flow Diagram](#flow-diagram)  
 11. [Folder Structure](#folder-structure)  
@@ -29,12 +26,11 @@
 14. [Contact Information](#contact-information)  
 15. [References](#references)  
 
-
+---
 
 ## Introduction
 This role is designed to automate the installation and configuration of SonarQube on target ubuntu servers. Whether you're setting up SonarQube for standalone code analysis or to integrate with continuous integration/continuous delivery solution, or other purposes, this role aims to simplify the process.
 
----
 
 ## Pre-requisites
 Before setting up SonarQube using Ansible, ensure you have the following:
@@ -42,8 +38,6 @@ Before setting up SonarQube using Ansible, ensure you have the following:
 - Ansible installed on your local machine
 - A target Ubuntu server (20.04 or later) with a non-root user having sudo privileges
 
-
----
 
 ## System Requirements
 The system requirements depend on the size of the codebase being analyzed. The minimum and recommended configurations are:
@@ -55,7 +49,6 @@ The system requirements depend on the size of the codebase being analyzed. The m
 | **Storage**   | 10 GB free disk space   | 50 GB or more  |
 | **OS**        | Ubuntu 20.04 | Latest LTS version |
 
----
 
 ## Dependencies
 Ensure the following dependencies are installed before running the Ansible role:
@@ -63,7 +56,6 @@ Ensure the following dependencies are installed before running the Ansible role:
 - Python (v3.6+)
 - Ansible (v2.9+)
 
----
 
 ## Runtime Dependencies
 Once SonarQube is running, the following services should be available:
@@ -73,7 +65,6 @@ Once SonarQube is running, the following services should be available:
 - PostgreSQL Database
 - Reverse Proxy (if applicable)
 
----
 
 ## Important Ports
 To ensure proper connectivity, the following ports need to be opened:
@@ -84,7 +75,6 @@ To ensure proper connectivity, the following ports need to be opened:
 | **5432** | PostgreSQL | Database communication |
 | **80/443** | Nginx (Optional) | If using a reverse proxy |
 
----
 
 ## SonarQube 
 SonarQube is a leading open-source platform for continuous inspection of code quality. It analyzes codebases, identifies bugs, security vulnerabilities, and code smells. Offering a comprehensive view of code health, SonarQube assists development teams in maintaining high-quality software, ensuring robust security, and fostering continuous improvement in codebases.
