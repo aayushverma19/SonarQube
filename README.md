@@ -24,11 +24,10 @@
 9. [Creating a Role](#creating-a-role)
 10. [Flow Diagram](#flow-diagram)  
 11. [Folder Structure](#folder-structure)  
-12. [Steps for Creating Ansible Role](#steps-for-creating-ansible-role)  
-13. [Run Playbook](#run-playbook)  
-14. [Conclusion](#conclusion)  
-15. [Contact Information](#contact-information)  
-16. [References](#references)  
+12. [Run Playbook](#run-playbook)  
+13. [Conclusion](#conclusion)  
+14. [Contact Information](#contact-information)  
+15. [References](#references)  
 
 
 
@@ -244,11 +243,6 @@ ansible-galaxy init sonarQube-setup
 ## Folder Structure
 
 ![image](https://github.com/user-attachments/assets/3424fd07-fd9b-464c-a0c3-c3dd526eb823)
-
-
-## Steps for creating Ansible role
-
-[POC](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Aayush-SCRUM-93/Application%20CI%20Design/Sonarqube/Software%20Configuration/POC/README.md)
 
 
 ## Run playbook
