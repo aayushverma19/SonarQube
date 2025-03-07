@@ -14,15 +14,15 @@
 4. [Dependencies](#dependencies)  
 5. [Runtime Dependencies](#runtime-dependencies)  
 6. [Important Ports](#important-ports)  
-7. [Flow Diagram](#flow-diagram)  
-8. [Install Ansible](#install-ansible)  
-9. [SonarQube](#sonarqube)  
+7. [Install Ansible](#install-ansible)  
+8. [SonarQube](#sonarqube)  
    - [Key Features of SonarQube](#key-features-of-sonarqube)  
    - [Important Configuration Files in SonarQube](#important-configuration-files-in-sonarqube)  
      1. [sonar-project.properties](#sonar-projectproperties)  
      2. [sonar-scanner.properties](#sonar-scannerproperties)  
      3. [sonar.properties](#sonar-properties)  
-10. [Creating a Role](#creating-a-role)  
+9. [Creating a Role](#creating-a-role)
+10. [Flow Diagram](#flow-diagram)  
 11. [Folder Structure](#folder-structure)  
 12. [Steps for Creating Ansible Role](#steps-for-creating-ansible-role)  
 13. [Run Playbook](#run-playbook)  
@@ -224,7 +224,6 @@ SonarQube is a leading open-source platform for continuous inspection of code qu
 
  To install Ansible on your system, please follow the link below for the Ansible Installation Guide. :- [Ansible Installation Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Aayush-SCRUM-93/Common/Software/Ansible/Installation/README.md)
 
----
 
 ## Flow Diagram
 
