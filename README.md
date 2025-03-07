@@ -19,9 +19,6 @@
 9. [SonarQube](#sonarqube)  
    - [Key Features of SonarQube](#key-features-of-sonarqube)  
    - [Important Configuration Files in SonarQube](#important-configuration-files-in-sonarqube)  
-     1. [sonar-project.properties](#sonar-projectproperties)  
-     2. [sonar-scanner.properties](#sonar-scannerproperties)  
-     3. [sonar.properties](#sonar-properties)  
 10. [Creating a Role](#creating-a-role)  
 11. [Folder Structure](#folder-structure)  
 12. [Steps for Creating Ansible Role](#steps-for-creating-ansible-role)  
@@ -35,7 +32,7 @@
 ## Introduction
 This document guides the automated deployment of SonarQube using Ansible, covering installation, configuration, and service setup. The role ensures efficient management across environments with minimal manual effort.
 
----
+
 
 ## Pre-requisites
 Before setting up SonarQube using Ansible, ensure you have the following:
@@ -44,7 +41,7 @@ Before setting up SonarQube using Ansible, ensure you have the following:
 - A target Ubuntu server (20.04 or later) with a non-root user having sudo privileges
 
 
----
+
 
 ## System Requirements
 The system requirements depend on the size of the codebase being analyzed. The minimum and recommended configurations are:
@@ -56,7 +53,7 @@ The system requirements depend on the size of the codebase being analyzed. The m
 | **Storage**   | 10 GB free disk space   | 50 GB or more  |
 | **OS**        | Ubuntu 20.04 | Latest LTS version |
 
----
+
 
 ## Dependencies
 Ensure the following dependencies are installed before running the Ansible role:
@@ -64,7 +61,7 @@ Ensure the following dependencies are installed before running the Ansible role:
 - Python (v3.6+)
 - Ansible (v2.9+)
 
----
+
 
 ## Runtime Dependencies
 Once SonarQube is running, the following services should be available:
@@ -74,7 +71,7 @@ Once SonarQube is running, the following services should be available:
 - PostgreSQL Database
 - Reverse Proxy (if applicable)
 
----
+
 
 ## Important Ports
 To ensure proper connectivity, the following ports need to be opened:
@@ -85,17 +82,9 @@ To ensure proper connectivity, the following ports need to be opened:
 | **5432** | PostgreSQL | Database communication |
 | **80/443** | Nginx (Optional) | If using a reverse proxy |
 
----
-
-## Flow Diagram
-
-* This diagram should help you visualize the sequence of tasks in the Ansible role for setting up SonarQube.
-
-![image](https://github.com/user-attachments/assets/c591566e-eb68-4044-b7e3-326043f718b7)
 
 
 
-***
 
 
 ## SonarQube 
@@ -158,9 +147,6 @@ SonarQube is a leading open-source platform for continuous inspection of code qu
 | `sonar.inclusions`             | Includes specific files or directories for analysis.                                            | `**/*.java, **/*.js`                       | Limits analysis to specific file types or directories.                          |
 | `sonar.java.binaries`          | Specifies the directory containing compiled Java classes.                                       | `target/classes`                           | Required for Java projects to analyze compiled code.                            |
 | `sonar.java.libraries`         | Specifies the directory containing Java libraries (JAR files).                                  | `target/lib/*.jar`                         | Required for Java projects to analyze dependencies.                            |
-
-
-
 
 
 
@@ -231,17 +217,21 @@ SonarQube is a leading open-source platform for continuous inspection of code qu
 
 
 
-## Install Ansible
-
- To install Ansible on your system, please follow the link below for the Ansible Installation Guide. :- [Ansible Installation Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Aayush-SCRUM-93/Common/Software/Ansible/Installation/README.md)
-
----
-
 ## Install SonarQube
 
  To install SonarQube on your system, please follow the link below for the SonarQube Installation Guide. :- [SonarQube Installation Guide]()
 
----
+
+## Install Ansible
+
+ To install Ansible on your system, please follow the link below for the Ansible Installation Guide. :- [Ansible Installation Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Aayush-SCRUM-93/Common/Software/Ansible/Installation/README.md)
+
+
+## Flow Diagram
+
+* This diagram should help you visualize the sequence of tasks in the Ansible role for setting up SonarQube.
+
+![image](https://github.com/user-attachments/assets/c591566e-eb68-4044-b7e3-326043f718b7)
 
 
 ## Creating a Role
@@ -252,14 +242,13 @@ To create a new role, you can use the ansible-galaxy command:
 ansible-galaxy init sonarQube-setup 
 ```
 
-
 ## Folder Structure
 
 ![image](https://github.com/user-attachments/assets/3424fd07-fd9b-464c-a0c3-c3dd526eb823)
 
 
 
-## variables
+## Variables
 
 
 | **Variable**            | **Value**                | **Description**                                |  
@@ -284,7 +273,7 @@ ansible-galaxy init sonarQube-setup
 
     3. `sonarqube.yml`:-This Ansible playbook installs and configures SonarQube by downloading and extracting it, creating a dedicated user and group, setting permissions, configuring SonarQube using templates, setting up a systemd service, and updating sysctl settings.
 
----
+
 
 ## Templates for Configuration
 
