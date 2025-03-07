@@ -87,17 +87,6 @@ To ensure proper connectivity, the following ports need to be opened:
 
 ---
 
-## Flow Diagram
-
-* This diagram should help you visualize the sequence of tasks in the Ansible role for setting up SonarQube.
-
-![image](https://github.com/user-attachments/assets/c591566e-eb68-4044-b7e3-326043f718b7)
-
-
-
-***
-
-
 ## SonarQube 
 SonarQube is a leading open-source platform for continuous inspection of code quality. It analyzes codebases, identifies bugs, security vulnerabilities, and code smells. Offering a comprehensive view of code health, SonarQube assists development teams in maintaining high-quality software, ensuring robust security, and fostering continuous improvement in codebases.
 
@@ -236,6 +225,12 @@ SonarQube is a leading open-source platform for continuous inspection of code qu
  To install Ansible on your system, please follow the link below for the Ansible Installation Guide. :- [Ansible Installation Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Aayush-SCRUM-93/Common/Software/Ansible/Installation/README.md)
 
 ---
+
+## Flow Diagram
+
+* This diagram should help you visualize the sequence of tasks in the Ansible role for setting up SonarQube.
+
+![image](https://github.com/user-attachments/assets/c591566e-eb68-4044-b7e3-326043f718b7)
 
 
 ## Creating a Role
