@@ -6,24 +6,30 @@
 | Aayush Verma|   27-02-2025              | v1          | Aayush Verma   | 27-02-2025   |  Internal Reviewer | Siddharth |
 
 
-## **Table of Contents**
+## **Table of Contents**  
 
-  1. [Introduction](#introduction)
-  2. [Pre Requisites](#pre-requisites)
-  3. [System Requirements](#system-requirements)
-  4. [Dependencies](#dependencies)
-  5. [Runtime Dependencies](#runtime-dependencies)
-  6. [Important Ports](#important-ports)
-  7. [Flow Diagram](#flow-diagram)
-  8. [Install Ansible](#install-ansible)
-  9. [Sonarqube](#sonarqube)
-  10. [Creating a Role](#creating-a-role)
-  11. [Folder Structure](#folder-structure)
-  12. [Steps For Creating Ansible Role](#steps-for-creating-ansible-role)
-  13. [Run Playbook](#run-playbook)
-  14. [Conclusion](#conclusion)
-  15. [Contact Information](#contact-information)
-  16. [References](#references)
+1. [Introduction](#introduction)  
+2. [Pre-requisites](#pre-requisites)  
+3. [System Requirements](#system-requirements)  
+4. [Dependencies](#dependencies)  
+5. [Runtime Dependencies](#runtime-dependencies)  
+6. [Important Ports](#important-ports)  
+7. [Flow Diagram](#flow-diagram)  
+8. [Install Ansible](#install-ansible)  
+9. [SonarQube](#sonarqube)  
+   - [Key Features of SonarQube](#key-features-of-sonarqube)  
+   - [Important Configuration Files in SonarQube](#important-configuration-files-in-sonarqube)  
+     1. [sonar-project.properties](#sonar-projectproperties)  
+     2. [sonar-scanner.properties](#sonar-scannerproperties)  
+     3. [sonar.properties](#sonar-properties)  
+10. [Creating a Role](#creating-a-role)  
+11. [Folder Structure](#folder-structure)  
+12. [Steps for Creating Ansible Role](#steps-for-creating-ansible-role)  
+13. [Run Playbook](#run-playbook)  
+14. [Conclusion](#conclusion)  
+15. [Contact Information](#contact-information)  
+16. [References](#references)  
+
 
 
 ## Introduction
@@ -91,11 +97,6 @@ To ensure proper connectivity, the following ports need to be opened:
 
 ***
 
-## Install Ansible
-
- To install Ansible on your system, please follow the link below for the Ansible Installation Guide. :- [Ansible Installation Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Aayush-SCRUM-93/Common/Software/Ansible/Installation/README.md)
-
----
 
 ## SonarQube 
 SonarQube is a leading open-source platform for continuous inspection of code quality. It analyzes codebases, identifies bugs, security vulnerabilities, and code smells. Offering a comprehensive view of code health, SonarQube assists development teams in maintaining high-quality software, ensuring robust security, and fostering continuous improvement in codebases.
@@ -146,22 +147,15 @@ SonarQube is a leading open-source platform for continuous inspection of code qu
 
 | **Property**                  | **Use Case**                                                                                     | **Example Value**                          | **Description**                                                                 |
 |-------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------|
-| **Required Metadata**                                                                                                                          |
 | `sonar.projectKey`             | Unique identifier for the project in SonarQube.                                                 | `my_project_key`                           | Used to uniquely identify the project in SonarQube.                             |
 | `sonar.projectName`            | Display name for the project in SonarQube.                                                      | `My Project`                               | The name of the project as it appears in the SonarQube UI.                      |
 | `sonar.projectVersion`         | Version of the project being analyzed.                                                          | `1.0`                                      | Helps track different versions of the project in SonarQube.                     |
-| **Source and Test Directories**                                                                                                                 |
 | `sonar.sources`                | Specifies the directories containing source code.                                               | `src`                                      | Tells SonarQube where to find the source code for analysis.                     |
 | `sonar.tests`                  | Specifies the directories containing test code.                                                 | `test`                                     | Tells SonarQube where to find the test code for analysis.                       |
-| **Encoding**                                                                                                                                    |
 | `sonar.sourceEncoding`         | Specifies the encoding of the source files.                                                     | `UTF-8`                                    | Ensures SonarQube reads files with the correct encoding.                        |
-| **Language**                                                                                                                                    |
 | `sonar.language`               | Specifies the primary language of the project.                                                  | `java`                                     | Helps SonarQube apply the correct rules and analyzers for the language.         |
-| **Exclusions**                                                                                                                                |
 | `sonar.exclusions`             | Excludes specific files or directories from analysis.                                           | `**/test/**, **/generated/**`              | Prevents SonarQube from analyzing test or generated code.                       |
-| **Inclusions**                                                                                                                                |
 | `sonar.inclusions`             | Includes specific files or directories for analysis.                                            | `**/*.java, **/*.js`                       | Limits analysis to specific file types or directories.                          |
-| **Additional Properties**                                                                                                                      |
 | `sonar.java.binaries`          | Specifies the directory containing compiled Java classes.                                       | `target/classes`                           | Required for Java projects to analyze compiled code.                            |
 | `sonar.java.libraries`         | Specifies the directory containing Java libraries (JAR files).                                  | `target/lib/*.jar`                         | Required for Java projects to analyze dependencies.                            |
 
@@ -191,10 +185,8 @@ SonarQube is a leading open-source platform for continuous inspection of code qu
    ```
 | **Property**                  | **Use Case**                                                                                     | **Example Value**                          | **Description**                                                                 |
 |-------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------|
-| **SonarQube Server Configuration**                                                                                                           |
 | `sonar.host.url`               | Specifies the URL of the SonarQube server.                                                      | `http://localhost:9000`                    | Defines where the SonarQube server is hosted.                                   |
 | `sonar.login`                  | Authentication token for accessing the SonarQube server.                                        | `your_token_here`                          | Used for authenticating with the SonarQube server (e.g., for CI/CD integration).|
-| **Project Configuration**                                                                                                                     |
 | `sonar.projectKey`             | Unique identifier for the project in SonarQube.                                                 | `my_project_key`                           | Used to uniquely identify the project in SonarQube.                             |
 | `sonar.projectName`            | Display name for the project in SonarQube.                                                      | `My Project`                               | The name of the project as it appears in the SonarQube UI.                      |
 | `sonar.projectVersion`         | Version of the project being analyzed.                                                          | `1.0`                                      | Helps track different versions of the project in SonarQube.                     |
@@ -226,22 +218,24 @@ SonarQube is a leading open-source platform for continuous inspection of code qu
 
 | **Property**                  | **Use Case**                                                                                     | **Example Value**                          | **Description**                                                                 |
 |-------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------|
-| **Database Configuration**                                                                                                                          |
 | `sonar.jdbc.username`          | Database connection username for SonarQube.                                                    | `sonarqube`                                | Specifies the username for connecting to the database (e.g., PostgreSQL).       |
 | `sonar.jdbc.password`          | Database connection password for SonarQube.                                                    | `your_password`                            | Specifies the password for connecting to the database.                          |
 | `sonar.jdbc.url`               | Database connection URL for SonarQube.                                                         | `jdbc:postgresql://localhost/sonarqube`    | Specifies the JDBC URL for connecting to the database (e.g., PostgreSQL).       |
-| **Web Server Configuration**                                                                                                                         |
 | `sonar.web.host`               | Host address for the SonarQube web server.                                                     | `0.0.0.0`                                  | Binds the SonarQube web server to all available IP addresses.                   |
 | `sonar.web.port`               | Port for the SonarQube web server.                                                             | `9000`                                     | Specifies the port on which the SonarQube web server will run.                  |
-| **Elasticsearch Configuration**                                                                                                                     |
 | `sonar.search.host`            | Host address for the Elasticsearch server used by SonarQube.                                   | `localhost`                                | Specifies the host for Elasticsearch (used for search and indexing).            |
 | `sonar.search.port`            | Port for the Elasticsearch server used by SonarQube.                                           | `9001`                                     | Specifies the port for Elasticsearch.                                           |
-| **Security Configuration**                                                                                                                          |
 | `sonar.forceAuthentication`    | Enforces authentication for accessing SonarQube.                                               | `true`                                     | Ensures users must log in to access SonarQube.                                  |
 | `sonar.security.realm`         | Specifies the authentication realm (e.g., LDAP, local).                                        | `LDAP`                                     | Configures SonarQube to use LDAP for user authentication.                       |
 | `sonar.security.localUsers`    | Specifies local users who can log in to SonarQube.                                             | `admin`                                    | Defines local users (e.g., `admin`) for authentication.                         |
 
 
+
+## Install Ansible
+
+ To install Ansible on your system, please follow the link below for the Ansible Installation Guide. :- [Ansible Installation Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Aayush-SCRUM-93/Common/Software/Ansible/Installation/README.md)
+
+---
 
 
 ## Creating a Role
