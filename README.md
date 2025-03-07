@@ -13,19 +13,22 @@
 3. [System Requirements](#system-requirements)  
 4. [Dependencies](#dependencies)  
 5. [Runtime Dependencies](#runtime-dependencies)  
-6. [Important Ports](#important-ports)  
-7. [Flow Diagram](#flow-diagram)  
-8. [Install Ansible](#install-ansible)  
-9. [SonarQube](#sonarqube)  
+6. [Important Ports](#important-ports)
+7. [SonarQube](#sonarqube)  
    - [Key Features of SonarQube](#key-features-of-sonarqube)  
-   - [Important Configuration Files in SonarQube](#important-configuration-files-in-sonarqube)  
-10. [Creating a Role](#creating-a-role)  
-11. [Folder Structure](#folder-structure)  
-12. [Steps for Creating Ansible Role](#steps-for-creating-ansible-role)  
-13. [Run Playbook](#run-playbook)  
-14. [Conclusion](#conclusion)  
-15. [Contact Information](#contact-information)  
-16. [References](#references)  
+   - [Important Configuration Files in SonarQube](#important-configuration-files-in-sonarqube)
+8. [Install SonarQube](#install-sonarqube)
+9. [Install Ansible](#install-ansible)
+10. [Flow Diagram](#flow-diagram) 
+11. [Creating a Role](#creating-a-role)  
+12. [Folder Structure](#folder-structure)  
+13. [Variables](#variables)
+14. [Subtask Files](#subtasks-files)
+15. [Templates for Configuration](#templates-for-configuration)  
+16. [Run Playbook](#run-playbook)  
+17. [Conclusion](#conclusion)  
+18. [Contact Information](#contact-information)  
+19. [References](#references)  
 
 
 
@@ -264,7 +267,7 @@ ansible-galaxy init sonarQube-setup
 | `sonarqube_db_password` | `"mwd#2%#!!#%rgs"`     | Password for the SonarQube database user.      |  
 
 
-## Subtasks File
+## Subtasks Files
 - This file is included in the `dependence.yml`, `dboperation.yml` & `sonarqube.yml` files.
 
     1. `dependence.yml`:- This Ansible playbook updates the package cache, installs required packages (using a variable required_packages), and ensures the PostgreSQL service is running and enabled at boot. 
