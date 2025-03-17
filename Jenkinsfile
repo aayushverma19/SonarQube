@@ -7,7 +7,7 @@ pipeline {
         git_url  = "https://github.com/jaiswaladi246/Petclinic.git"
         branch_name = 'main'
         SONAR_PROJECT_KEY = 'Qualty' 
-        channel_name = 'notification'
+        channel_name = 'test-case'
         email_recipients = "aayush.verma@mygurukulam.co"
       
     }
